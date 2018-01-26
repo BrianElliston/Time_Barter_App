@@ -1,8 +1,13 @@
 {
   "development": {
     "username": "root",
-    "password": "Sidley",
-    "database": "practice_db",
+
+    "password": "",
+    "database": "time_barter",
+
+    "password": "",
+    "database": "time_barter",
+
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
