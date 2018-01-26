@@ -2,8 +2,9 @@ body {
     background-color: lightblue;
 };
 
-#bob {
+.bob {
 text-align: center;
+color: red;
 }
 
 /* test for push/pull/merge */
