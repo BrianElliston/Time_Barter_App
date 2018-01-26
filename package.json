@@ -1,0 +1,19 @@
+{
+  "name": "time_barter_app",
+  "version": "1.0.0",
+  "description": "Time Bartering Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrianElliston/Time_Barter_App.git"
+  },
+  "author": "Inquirers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrianElliston/Time_Barter_App/issues"
+  },
+  "homepage": "https://github.com/BrianElliston/Time_Barter_App#readme"
+}
