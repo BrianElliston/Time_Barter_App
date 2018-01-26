@@ -15,5 +15,16 @@
   "bugs": {
     "url": "https://github.com/BrianElliston/Time_Barter_App/issues"
   },
-  "homepage": "https://github.com/BrianElliston/Time_Barter_App#readme"
+  "homepage": "https://github.com/BrianElliston/Time_Barter_App#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "fs": "0.0.1-security",
+    "method-override": "^2.3.10",
+    "mysql": "^2.15.0",
+    "mysql2": "^1.5.1",
+    "path": "^0.12.7",
+    "sequelize": "^4.32.2"
+  }
 }
