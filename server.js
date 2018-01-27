@@ -8,7 +8,7 @@
 // =============================================================
 var express = require("express");
 var bodyParser = require("body-parser");
-
+var routes = require("./controllers/api-routes");
 // Sets up the Express App
 // =============================================================
 var app = express();
@@ -23,3 +23,5 @@ db.sequelize.sync({ force: true }).then(function() {
     console.log("App listening on PORT " + PORT);
   });
 });
+
+routes(app);

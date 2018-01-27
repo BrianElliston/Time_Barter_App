@@ -2,7 +2,10 @@
   "development": {
     "username": "root",
     "password": "",
-    "database": "practice_db",
+    "database": "time_barter",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "operatorsAliases": false
   },
   "test": {
     "username": "root",
