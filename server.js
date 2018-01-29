@@ -1,41 +1,74 @@
-
-
 // *****************************************************************************
 // Server.js - This file is the initial starting point for the Node/Express server.
-//
 // ******************************************************************************
-// *** Dependencies
+
+// DEPENDANCIES
 // =============================================================
 var express = require("express");
 var bodyParser = require("body-parser");
+var passport   = require("passport");
+var session    = require("express-session");
+var env = require('dotenv').load();
+var exphbs = require('express-handlebars')
 
-
+//Routes
 var routes = require("./routes/api-routes");
+// Models
+var db = require("./models");
 
-// Sets up the Express App
-// =============================================================
+
+// ========Initializing EXPRESS========
 var app = express();
 var PORT = process.env.PORT || 8080;
 
-// Requiring our models for syncing
-var db = require("./models");
+// Static directory
+app.use(express.static("public"));
 
+
+// ========For BODY-PARSER========
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 // parse application/json
 app.use(bodyParser.json());
 
-// Static directory
-app.use(express.static("public"));
+
+// ========For PASSPORT========
+app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true})); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+
+
+// ========For HANDLEBARS========
+app.set('views', './app/views')
+app.engine('hbs', exphbs({
+    extname: '.hbs'
+}));
+app.set('view engine', '.hbs');
+
 
 // Routes
 // =============================================================
 require("./routes/api-routes.js")(app);
 
-// =============================================================
-db.sequelize.sync({ force: true }).then(function() {
-  app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
-  });
+
+// ========Syncing DATABASE========
+db.sequelize.sync().then(function() {
+
+	//Checking if db is connected
+	console.log("DB looks fine!");
+
+}).catch(function(err) {
+
+ 	//Checking if db is connected
+    console.log(err, "Something went wrong with the Database Update!")
+ 
+ });
+
+//// ========the LISTENER========
+ app.listen(PORT, function() {
+
+  		//Checking if port listens
+    	console.log("App listening on PORT " + PORT);
+
 });
 
