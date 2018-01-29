@@ -8,7 +8,7 @@
 // =============================================================
 var express = require("express");
 var bodyParser = require("body-parser");
-var routes = require("./controllers/api-routes");
+var routes = require("./routes/api-routes");
 // Sets up the Express App
 // =============================================================
 var app = express();
