@@ -5,7 +5,6 @@ module.exports = (sequelize, DataTypes) => {
     category: DataTypes.STRING,
     description: DataTypes.TEXT,
     cost: DataTypes.INTEGER,
-    worker_id: DataTypes.INTEGER
   }, {
     classMethods: {
       associate: function(models) {
@@ -15,3 +14,4 @@ module.exports = (sequelize, DataTypes) => {
   });
   return offers;
 };
+
