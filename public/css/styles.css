@@ -1,10 +1,15 @@
+#top {
+    color:rgb(185, 23, 23);
+    font-size: 60px;
+    font-style: italic;
+    
+}
+
+
 body {
-    background-color: lightblue;
+    background-color: beige;
 };
 
-.bob {
-text-align: center;
-color: red;
-}
+
 
 /* test for push/pull/merge */
