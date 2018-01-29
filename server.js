@@ -46,14 +46,6 @@ app.engine('hbs', exphbs({
 app.set('view engine', '.hbs');
 
 
-
-
-
-
-
-
-
-
 // Routes
 // =============================================================
 require("./routes/api-routes.js")(app);
