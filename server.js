@@ -10,9 +10,9 @@ var passport   = require("passport");
 var session    = require("express-session");
 var env = require('dotenv').load();
 
-
+//Routes
 var routes = require("./routes/api-routes");
-// Requiring our models for syncing
+// Models
 var db = require("./models");
 
 
@@ -49,16 +49,24 @@ app.use(express.static("public"));
 require("./routes/api-routes.js")(app);
 
 
-
-// =============================================================
+// ========Syncing DATABASE========
 db.sequelize.sync().then(function() {
+
 	//Checking if db is connected
 	console.log("DB looks fine!");
 
-	//Turning on the Listener
-  	app.listen(PORT, function() {
+}).catch(function(err) {
+
+ 	//Checking if db is connected
+    console.log(err, "Something went wrong with the Database Update!")
+ 
+ });
+
+//// ========the LISTENER========
+ app.listen(PORT, function() {
+
   		//Checking if port listens
     	console.log("App listening on PORT " + PORT);
-  });
+
 });
 
