@@ -17,9 +17,6 @@ module.exports = {
       cost: {
         type: Sequelize.INTEGER
       },
-      worker_id: {
-        type: Sequelize.INTEGER
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
