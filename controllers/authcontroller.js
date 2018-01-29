@@ -5,7 +5,7 @@ exports.signup = function(req, res) {
  
     res.render('signup');
  
-}
+};
 
 //Notes:
 //This is imported to auth.js, which defines its route

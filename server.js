@@ -13,6 +13,8 @@ var exphbs = require('express-handlebars')
 
 //Routes
 var routes = require("./routes/api-routes");
+
+
 // Models
 var db = require("./models");
 
@@ -37,16 +39,18 @@ app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true}))
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
+var authRoute = require('./routes/auth.js')(app);
+
 
 // ========For HANDLEBARS========
-app.set('views', './app/views')
+app.set('views', './views')
 app.engine('hbs', exphbs({
     extname: '.hbs'
 }));
 app.set('view engine', '.hbs');
 
 
-// Routes
+// ROUTES
 // =============================================================
 require("./routes/api-routes.js")(app);
 
