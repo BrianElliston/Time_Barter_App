@@ -7,7 +7,8 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var passport   = require("passport");
-var session    = require("express-session")
+var session    = require("express-session");
+var env = require('dotenv').load();
 
 
 var routes = require("./routes/api-routes");
