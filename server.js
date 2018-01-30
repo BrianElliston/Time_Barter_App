@@ -57,7 +57,7 @@ app.set('view engine', 'handlebars');
 
 // ROUTES
 // =============================================================
-// require("./routes/api-routes.js")(app);
+require("./routes/api-routes.js")(app);
 
 app.get("/", function (req, res) {
 	res.render("index");
