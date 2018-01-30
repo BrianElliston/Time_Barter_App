@@ -1,10 +1,90 @@
-{{!-- Setup the index.handlebars to have the template that Handlebars can render onto. --}}
-
-{{!-- Create a button in index.handlebars that will submit the user input into the database. --}}
-
-
-{{!-- test code to see if rendering on main.handlebars --}}
+{{!-- Setup the index.handlebars to have the template that Handlebars can render onto. {{!-- Create a button in index.handlebars
+that will submit the user input into the database. --}} {{!-- test code to see if rendering on main.handlebars --}}
 
 
+<div class=container>
+
+    <br>
+    <br>
+
+<div class="col-md-12">
+
+            <h2>About Time Barter</h2>
+
+            <p>
+                Time barter is a time-based currency. Give one hour of service to another, and receive one time service. 
+
+Unlike money, where some work is valued highly, and other work is given little value, an hour of service is always one time credit regardless of the nature of the service performed.
+
+It can be hard for us to wrap our heads around this One = One rule because we are so used to regular money which includes price, and where some kinds of work earn a lot while other kinds of work earn very little.
+
+It helps to remember that this rule is rooted in the idea that regardless of whether we value what we do in different ways, we share a fundamental equality as human beings.
+
+So the point is not to mimic money.
+            </p>
+
+        </div>
+
+    <div class="row">
 
 
+        <div class="col-md-1">
+
+
+        </div>
+
+        <div class="col-md-2">
+
+
+
+            <form id="signup" name="signup" method="post" action="/signup">
+                <label for="name">Name</label>
+                <input name="name" type="text" />
+                <label for="zipcode">Zipcode</label>
+                <input name="firstname" type="text" />
+                <label for="email">Email Address</label>
+                <input class="text" name="email" type="email" />
+                <label for="password">Password</label>
+                <input name="password" type="password" />
+                <br>
+                <br>
+                <input class="btn" type="submit" value="Sign Up" />
+            </form>
+
+        </div>
+
+        
+    
+
+        <div class="col-md-2">
+
+
+        </div>
+
+        <div class="col-md-5">
+
+            <img  id="ourPic"  src=./images/hOur-IMPACT-Time-Banking.jpg width="420" height="300">
+
+            <style> #ourPic {
+                
+                border: 20px;
+
+                }</style>
+        
+
+        </div>
+
+        
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+</div>

@@ -4,16 +4,7 @@ console.log(db.User);
 
 module.exports = function (app) {
 
-    // app.gets
-    // app.posts
-    // etcetera
-    // GET route for getting all of the 
-    app.get("/", function (req, res) {
-        res.json({
-            message: "Hello World"
-        });
-
-    });
+   
 
     app.get("/api/users", function(req, res) {
         
