@@ -5,7 +5,10 @@ var authController = require('../controllers/authcontroller.js');
 module.exports = function(app) {
  
  	//the sign-up route, 'gets' the sign-up page for the user
-    app.get('/signup', authController.signup);
+	app.get('/signup', authController.signup);
+	
+	//Route for signing up new user
+    app.post('/signup', authController.signUp);
  
  	//the sign-in route, 'gets' the sign-up page for the user
  	app.get('/signin', authController.signin);
@@ -13,5 +16,5 @@ module.exports = function(app) {
 }
 
 
-//Notes:
+//Note
 //This is imported to server.js file which passes app, as an argument

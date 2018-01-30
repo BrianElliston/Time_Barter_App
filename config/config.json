@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Sidley",
+    "password": "",
     "database": "time_barter",
     "host": "127.0.0.1",
     "dialect": "mysql",
