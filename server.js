@@ -42,17 +42,32 @@ app.use(passport.session()); // persistent login sessions
 var authRoute = require('./routes/auth.js')(app);
 
 
+
+
 // ========For HANDLEBARS========
-app.set('views', './views')
-app.engine('hbs', exphbs({
-    extname: '.hbs'
-}));
-app.set('view engine', '.hbs');
+// app.set('views', './views')
+// app.engine('hbs', exphbs({
+//     extname: '.hbs'
+// }));
+// app.set('view engine', '.hbs');
+
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.set('view engine', 'handlebars');
 
 
 // ROUTES
 // =============================================================
-require("./routes/api-routes.js")(app);
+// require("./routes/api-routes.js")(app);
+
+app.get("/", function (req, res) {
+	res.render("index");
+		   
+			// res.json({
+			// 	message: "Hello World"
+			// });
+			 
+	
+		});
 
 
 // ========Syncing DATABASE========

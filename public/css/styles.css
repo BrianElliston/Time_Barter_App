@@ -1,15 +1,24 @@
 #top {
-    color:rgb(185, 23, 23);
+    color:rgb(226, 59, 59);
     font-size: 60px;
     font-style: italic;
     
 }
 
 
+
 body {
-    background-color: beige;
-};
+    background-color: rgb(130, 183, 206);
+}
 
 
+#foot {
+    text-align: center;
+    background-color: rgb(234, 59, 59);
+}
 
-/* test for push/pull/merge */
+#ourPic {
+
+    border: 100px;
+}
+
