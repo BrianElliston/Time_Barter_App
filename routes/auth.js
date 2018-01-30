@@ -7,6 +7,9 @@ module.exports = function(app) {
  	//the sign-up route, 'gets' the sign-up page for the user
     app.get('/signup', authController.signup);
  
+ 	//the sign-in route, 'gets' the sign-up page for the user
+ 	app.get('/signin', authController.signin);
+
 }
 
 
