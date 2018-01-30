@@ -1,17 +1,25 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var Offers = sequelize.define('Offer', {
+  var Offer = sequelize.define('Offer', {
     off_id: DataTypes.INTEGER,
     category: DataTypes.STRING,
     description: DataTypes.TEXT,
     cost: DataTypes.INTEGER,
-      }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
+  }); 
+
+  Offer.associate = function(models) {
+    // An offer must have a user. 
+    Offer.belongsTo(models.User, {
+      // Foereign key constraint 
+      foreignKey: {
+        allowNull: false
       }
-    }
-  });
-  return offers;
+    });
+  };
+
+  return Offer;
 };
+
+
+
 
