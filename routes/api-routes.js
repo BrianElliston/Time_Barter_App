@@ -6,7 +6,7 @@ module.exports = function (app) {
         console.log(res.Offer)
         
         db.Offer.findAll({}).then(function(dbOffers) {
-          res.render("offers", {offers: res});
+          res.render("offers", {offers: dbOffers});
         });
     });
 

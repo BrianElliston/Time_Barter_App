@@ -38,19 +38,32 @@ So the point is not to mimic money.
 
 
             <form id="signup" name="signup" method="POST" action="/signup">
-                <label for="name">Name</label>
+                {{!-- <label for="name">Name</label>
                 <input name="name" type="text" />
                 <label for="zipcode">Zipcode</label>
                 <input name="firstname" type="text" />
                 <label for="email">Email Address</label>
                 <input class="text" name="email" type="email" />
                 <label for="password">Password</label>
-                <input name="password" type="password" />
+                <input name="password" type="password" /> --}}
                 <br>
                 <br>
                 <input class="btn" id="sub" type="submit" value="Sign Up" />
+                <br>
+                <br>
+                {{!-- <input class="btn" id="sign" type="submit" value="Sign In" /> --}}
                 
             </form>
+
+            <form id="signin" name="signin" method="post" action="signin">
+        <label for="email">Email Address</label>
+        <input class="text" name="email" type="text" />
+        <label for="password">Password</label>
+        <input name="password" type="password" />
+        <input class="btn" type="submit" value="Sign In" />
+        
+    </form>
+    
 
         </div>
 

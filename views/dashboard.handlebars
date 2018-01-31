@@ -6,7 +6,28 @@
 </head>
  
 <body>
-	<h1>Welcome to the Dashboard</h1>
+	<h1>Select a category to request a service</h1>
+
+    <form action="/action_page.php" method="get">
+  <label for="category">Select Category</label>
+  <input list="categories" name="category">
+  <datalist id="categories">
+    <option value="Baby/Senior Sitting">
+    <option value="Cooking">
+    <option value="Cleaning">
+    <option value="Handy Man">
+    <option value="Instructional">
+    <option value="Pet Care">
+    <option value="Tech Services">
+    <option value="Transportation">
+    <option value="Yard Work">
+  </datalist>
+  <button type="submit">Request Now</button>
+  </form>
+
+  
+
+    
     
 </body>
  

@@ -7,19 +7,23 @@ $( "#serv" ).click(function() {
   console.log("On Click submitting services working");
 });
 //need an on click for sign in 
-$( "#sign" ).click(function() {
-  console.log("On Click for sign in is working");
-});
-//need an on click for incrementing and decrementing user points4money
- 
-$( "#sign" ).click(function() {
-  console.log("On Click for sign in is working");
-});
-// on click for submitting new user
-$("#sub").on("submit", function(event) {
-  console.log("button pushed");
-  // Make sure to preventDefault on a submit event.
+$("#sign").on("click", function(event){
   event.preventDefault();
+  console.log("The paragraph was clicked.");
+  window.location.href = "/signin";
+});
+
+// $("#signin").on("click", function(event){
+//   event.preventDefault();
+//   console.log("The thingy was clicked.");
+//   window.location.href = "/dashboard";
+// });
+
+// on click for submitting new user
+// $("#sub").on("submit", function(event) {
+//   console.log("button pushed");
+//   // Make sure to preventDefault on a submit event.
+//   event.preventDefault();
 
   var newUser = {
     name: $("#user").val().trim(),
