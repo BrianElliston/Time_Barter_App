@@ -4,7 +4,6 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     {
       return queryInterface.bulkInsert('offers', [{
-       
         category: 'Handy Man',
         description: 'Will paint',
         cost: 4     
@@ -13,7 +12,7 @@ module.exports = {
         description: 'I do general house repairs',
         cost: 2
       },{
-        category: 'Transportation',
+         category: 'Transportation',
         description: '24-hr airport service',
         cost: 2 
       },{
@@ -32,42 +31,16 @@ module.exports = {
         category: 'Instructional',
         description: 'I teach piano',
         cost: 1 
-      },{
+      },{       
         category: 'Yard Work',
         description: 'Landscaping design and maintenance services',
         cost: 2 
-      },{
-        category: 'Tech Services',
-        description: 'Virus removal',
-        cost: 2 
-      },{
-        category: 'Senior Care',
-        description: 'I am trained to work with memory loss issues',
-        cost: 2  
-      },{
-        category: 'Pet Care',
-        description: '24-hour cat sitting',
-        cost: 4  
-      },{
-        category: 'Tech Services',
-        description: 'I build custom databases',
-        cost: 6 
-      },{
-        category: 'Senior Care',
-        description: 'Personal care services available',
-        cost: 4
-      },{
-        category: 'Pet Care',
-        description: 'Dog walking and grooming',
-        cost: 2 
-      },
-
-    ],
+      }],
     {});
   }
 },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('offer', null, {});
+    return queryInterface.bulkDelete('offers', null, {});
   }
 };
