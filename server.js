@@ -9,23 +9,11 @@ var bodyParser = require("body-parser");
 var passport   = require("passport");
 var session    = require("express-session");
 var env = require('dotenv').load();
-var exphbs = require('express-handlebars')
-
-//Routes
-var routes = require("./routes/api-routes");
-
-
-// Models
-var db = require("./models");
-
+var exphbs = require('express-handlebars');
 
 // ========Initializing EXPRESS========
 var app = express();
 var PORT = process.env.PORT || 8080;
-
-// Static directory
-app.use(express.static("public"));
-
 
 // ========For BODY-PARSER========
 // parse application/x-www-form-urlencoded
@@ -33,16 +21,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // parse application/json
 app.use(bodyParser.json());
 
-
 // ========For PASSPORT========
 app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true})); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
-var authRoute = require('./routes/auth.js')(app);
-
-
-
+// Models
+var db = require("./models");
 
 // ========For HANDLEBARS========
 // app.set('views', './views')
@@ -53,6 +38,21 @@ var authRoute = require('./routes/auth.js')(app);
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
+
+
+//Routes
+var routes = require("./routes/api-routes");
+
+var authRoute = require('./routes/auth.js')(app, passport);
+
+//load passport strategies
+require('./config/passport/passport.js')(passport, db.user);
+
+
+// Static directory
+app.use(express.static("public"));
+
+
 
 
 // ROUTES
@@ -69,6 +69,14 @@ app.get("/", function (req, res) {
 	
 		});
 
+//// ========the LISTENER========
+ app.listen(PORT, function() {
+
+  		//Checking if port listens
+    	console.log("App listening on PORT " + PORT);
+
+});
+
 
 // ========Syncing DATABASE========
 db.sequelize.sync().then(function() {
@@ -83,11 +91,5 @@ db.sequelize.sync().then(function() {
  
  });
 
-//// ========the LISTENER========
- app.listen(PORT, function() {
 
-  		//Checking if port listens
-    	console.log("App listening on PORT " + PORT);
-
-});
 
