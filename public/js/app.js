@@ -42,4 +42,3 @@ console.log("data: ", newUser);
       // location.reload();
     }
   );
-});
