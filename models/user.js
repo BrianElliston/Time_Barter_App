@@ -1,6 +1,6 @@
-// 'use strict';
+'use strict';
 module.exports = function(sequelize, DataTypes) {
-  var User = sequelize.define('user', {
+  var User = sequelize.define('user', {//User
     
     name: DataTypes.STRING,
     email: DataTypes.STRING,
@@ -16,17 +16,17 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.DATE(3),
       field: 'beginTime',
      defaultValue: sequelize.literal('CURRENT_TIMESTAMP(3)')
-    },
+    }
 
 
   });
 
     User.associate = function(models) {
         // Associate users and offers. User can have more than one offer.
-        User.hasMany(models.offer, {
+        User.hasMany(models.offer, {//Offer
           onDelete: "cascade"
         });
       }
-  User.sync();
+  // User.sync();
   return User;
 };

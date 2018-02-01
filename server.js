@@ -41,7 +41,7 @@ app.set('view engine', 'handlebars');
 
 
 //Routes
-var routes = require("./routes/api-routes");
+require("./routes/api-routes.js")(app);
 
 var authRoute = require('./routes/auth.js')(app, passport);
 
@@ -66,8 +66,9 @@ app.get("/", function (req, res) {
 			// 	message: "Hello World"
 			// });
 			 
-	
 		});
+
+
 
 //// ========the LISTENER========
  app.listen(PORT, function() {
@@ -90,6 +91,5 @@ db.sequelize.sync().then(function() {
     console.log(err, "Something went wrong with the Database Update!")
  
  });
-
 
 

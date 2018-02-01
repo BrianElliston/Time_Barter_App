@@ -3,14 +3,7 @@ var db = require("../models");
 //Controller to create a new offer
 var exports = module.exports = {}
 
-  exports.createOffer = function(req, res) {
-    //Check for a response
-    console.log("creating an offer for the table");
-    //Save offer to database
-    db.Offer.create(req.body).then(function(dbOffer) {
-      res.render("offers");
-    })
-  };
+ 
   
   //Function to increment and decrement hours from user time-bank.
   //When request button is clicked the time bank of the user offering service will decrease
