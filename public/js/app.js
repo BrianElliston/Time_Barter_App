@@ -5,6 +5,41 @@ $( "#search" ).click(function() {
 //need an on click for submitting services you want to offer
 $( "#serv" ).click(function() {
   console.log("On Click submitting services working");
+
+  var newOffer = {
+    category: $("#category").val().trim(),
+    description: $("#description").val.trim(),
+    cost: $("#cost").val.trim()
+  };
+  console.log('Offer entered: ', newOffer);
+  // Send the POST request.
+  $.ajax("/users", {
+    type: "POST",
+    data: newOffer
+  }).then(
+    function() {
+      console.log("created new offer");
+      // Reload the page to get the updated list
+      // location.reload();
+    }
+  );
+
+// Creates the user options in the dropdown
+function createUserRow(author) {
+  var listOption = $("<option>");
+  listOption.attr("value", author.id);
+  listOption.text(author.name);
+  return listOption;
+}  
+
+// Creates the author options in the dropdown
+function createAuthorRow(author) {
+  var listOption = $("<option>");
+  listOption.attr("value", author.id);
+  listOption.text(author.name);
+  return listOption;
+}
+
 });
 //need an on click for sign in 
 $("#sign").on("click", function(event){
@@ -24,6 +59,7 @@ $("#sign").on("click", function(event){
 //   console.log("button pushed");
 //   // Make sure to preventDefault on a submit event.
 //   event.preventDefault();
+  
 
   var newUser = {
     name: $("#user").val().trim(),
@@ -42,4 +78,3 @@ console.log("data: ", newUser);
       // location.reload();
     }
   );
-});

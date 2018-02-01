@@ -1,7 +1,7 @@
 <h2>Create An Offer</h2>
 
 
-<form action="/action_page.php" method="get">
+<form action="/api/users" method="get">
   <label for="category">Select Category</label>
   <input list="categories" name="category">
   <datalist id="categories">
@@ -23,27 +23,36 @@
 </form>
 <hr>
 
-
 <h2>Current Offers:</h2>
 <ul id="currentOffer">
-{{#each offers}}
+  <table>
+    <thead> 
+        <th>Name</th> 
+        <th>Description</th> 
+        <th>Take This Offer</th> 
+    </thead> 
+    <tbody> 
+      {{#offers}}         
+        <tr>           
+          <td>{{category}}</td> 
+          <td>{{description}}</td> 
+          <td><button id = "serv" type="submit">Send Request</button></td>
+        </tr> 
+      {{/offers}}
+    </tbody> 
+</table> 
 
-<li>{{category}}  {{description}}  {{UserId}}</li>
-{{/each}}
-</ul>
-}
 
 <style>
 
-hr { 
-    display: block;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    margin-left: auto;
-    margin-right: auto;
-    border-style: inset;
-    border-width: 3px;
+th {
+    background: #ccc;
+}
+th, td {
+    padding: 5px;
+    border: 1px solid #999;
 },
+
 
 label {
     width:180px;
@@ -52,4 +61,15 @@ label {
     padding-right:50px;
 }
 
+button {
+  height: 30px;
+  width: 100px;
+  color: black;
+  font-size: 12px;
+}
+
+#currentOffer {
+  color: rgb(93, 93, 124);
+  font-size: 18px;
+}
 </style>

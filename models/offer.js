@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     off_id: DataTypes.INTEGER,
     category: DataTypes.STRING,
     description: DataTypes.TEXT,
-    cost: DataTypes.INTEGER,
+    cost: DataTypes.INTEGER
   }); 
 
   Offer.associate = function(models) {

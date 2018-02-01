@@ -10,6 +10,7 @@ var exports = module.exports = {}
     db.Offer.create(req.body).then(function(dbOffer) {
       res.render("offers");
     })
+    
   };
   
   //Function to increment and decrement hours from user time-bank.
@@ -18,25 +19,11 @@ var exports = module.exports = {}
 
   // will show user contact info
 
-
-
-
-
-
-
-
-
-
-
   // Increment :
 
   // mysql_query(“UPDATE users SET points = time_bank + 1 WHERE user_id = ‘”.$userid.”‘”);
   
-  // Decrement:
-  
-  // mysql_query(“UPDATE users SET points = points – 1 WHERE user_id = ‘”.$userid.”‘”);
 
-  // move offer to show on current offers
 
 
   
