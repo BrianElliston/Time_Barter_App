@@ -1,3 +1,5 @@
+$(document).ready(function() {
+
 //need an on click for searching for services offered
 $( "#search" ).click(function() {
   console.log("On Click for  searching is working");
