@@ -36,6 +36,15 @@ So the point is not to mimic money.
         <div class="col-md-2">
 
 
+        <form id="signin" name="signin" method="post" action="signin">
+            <label for="email">Email Address</label>
+            <input class="text" name="email" type="text" />
+            <label for="password">Password</label>
+            <input name="password" type="password" />
+            <input class="btn" type="submit" value="Sign In" />
+        </form>
+
+
 
             <form id="signup" name="signup" method="POST" action="/signup">
                 {{!-- <label for="name">Name</label>
@@ -55,14 +64,7 @@ So the point is not to mimic money.
                 
             </form>
 
-            <form id="signin" name="signin" method="post" action="signin">
-        <label for="email">Email Address</label>
-        <input class="text" name="email" type="text" />
-        <label for="password">Password</label>
-        <input name="password" type="password" />
-        <input class="btn" type="submit" value="Sign In" />
-        
-    </form>
+          
     
 
         </div>

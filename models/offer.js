@@ -1,10 +1,10 @@
-// 'use strict';
+'use strict';
 module.exports = (sequelize, DataTypes) => {
   var Offer = sequelize.define('offer', {
     off_id: DataTypes.INTEGER,
     category: DataTypes.STRING,
     description: DataTypes.TEXT,
-    cost: DataTypes.INTEGER,
+    cost: DataTypes.INTEGER
   }); 
 
   Offer.associate = function(models) {
@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     });
   };
-  Offer.sync();
+
   return Offer;
 };
 

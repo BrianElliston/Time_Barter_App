@@ -3,16 +3,21 @@ var db = require("../models");
 module.exports = function (app) {
     // Show all of the users in the database
     app.get("/api/users", function(req, res) {
-        console.log(res.Offer)
+        console.log(res.offer)
         
-        db.Offer.findAll({}).then(function(dbOffers) {
+        db.offer.findAll({
+          // where: {
+          //   category: "Cooking"
+          // }
+        }).then(function(dbOffers) {
           res.render("offers", {offers: dbOffers});
         });
     });
 
+
     // Show all of the offers in the category a user selects
     app.get("/api/posts/category/:category", function(req, res) {
-        db.Offer.findAll({
+        db.offer.findAll({
           where: {
             category: req.params.category
           }
