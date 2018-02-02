@@ -14,7 +14,7 @@ module.exports = function (app) {
         });
     });
 
-   
+
     // Show all of the offers in the category a user selects
     app.get("/api/posts/category/:category", function(req, res) {
         db.offer.findAll({

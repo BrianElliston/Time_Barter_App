@@ -6,7 +6,33 @@
 </head>
  
 <body>
-	<h1>Select a category to request a service</h1>
+
+  <h1>Offer a Service</h1>
+
+  <form action="/action_page.php" method="get">
+    <label for="category">Select Category</label>
+    <input list="categories" name="category">
+    <datalist id="categories">
+      <option value="Baby/Senior Sitting">
+      <option value="Cooking">
+      <option value="Cleaning">
+      <option value="Handy Man">
+      <option value="Instructional">
+      <option value="Pet Care">
+      <option value="Tech Services">
+      <option value="Transportation">
+      <option value="Yard Work">
+    </datalist>
+    <label for="description">Description</label>
+      <input class="text" name="description" type="text" />
+      <label for="cost"># of hours offered</label>
+      <input name="cost" type="number" />
+    <input type="submit" id = "serv">
+  </form>
+  <hr>
+
+
+	<h1>Request a service</h1>
 
     <form action="/action_page.php" method="get">
   <label for="category">Select Category</label>
@@ -24,6 +50,20 @@
   </datalist>
   <button type="submit">Request Now</button>
   </form>
+
+  <br>
+
+  <form action="/api/users" method="get">
+  <label for="all">All Services</label>
+  <button type="submit">View</button>
+  </form>
+  <hr>
+
+  <form action="/logout" method="get">
+  <button type="submit">Log out</button>
+  </form>
+
+
 
   
 
