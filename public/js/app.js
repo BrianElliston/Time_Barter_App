@@ -11,11 +11,11 @@ $( "#serv" ).click(function() {
     description: $("#description").val.trim(),
     cost: $("#cost").val.trim()
   };
-  console.log('Offer entered: ', newOffer);
+  console.log('Offer entered: ', newoffer);
   // Send the POST request.
   $.ajax("/users", {
     type: "POST",
-    data: newOffer
+    data: newoffer
   }).then(
     function() {
       console.log("created new offer");
